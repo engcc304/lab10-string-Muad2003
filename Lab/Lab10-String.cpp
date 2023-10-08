@@ -28,10 +28,24 @@
 */
 
 #include <stdio.h>
+#include <string.h>
 
 int main() {
+    
+    char word[ 100 ] ;
 
-    //--| YOUR CODE HERE
-
+    printf("Enter word:\n");
+    scanf ( "%s", &word ) ;
+    int countstr = strlen( word ) ;
+    
+    char swapword[ 100 ] ;
+    for ( int i = 0 ; i < countstr ; i++ ) {
+        swapword[ i ] = word[ countstr - 1 - i ] ;
+    } // end for
+    swapword[ countstr ] = '\0' ;
+    int ans = strcmp( word , swapword ) ;
+    if ( ans == 0 ) printf ( "Pass." ) ;
+    else printf ( "Not Pass." ) ;
+    
     return 0 ;
-}//end main function
+}
